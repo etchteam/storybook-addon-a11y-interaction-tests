@@ -10,6 +10,9 @@ Tests should plug straight into Storybook interaction tests.
 
 */
 
+// Re-export utility functions
+export * from '../utils';
+
 export { a11yAccordion } from './accordion';
 export { a11yAlert } from './alert';
 export { a11yAlertDialog } from './alertdialog';

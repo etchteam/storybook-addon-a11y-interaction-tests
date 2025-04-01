@@ -101,7 +101,9 @@ export const a11yCheckbox = async ({
             group.getAttribute('aria-label') ||
             group.querySelector('legend')?.textContent ||
             (group.getAttribute('aria-labelledby') &&
-              document.getElementById(group.getAttribute('aria-labelledby') || '')?.textContent);
+              document.getElementById(
+                group.getAttribute('aria-labelledby') || '',
+              )?.textContent);
 
           await expect(hasLabel).toBeTruthy();
         }),

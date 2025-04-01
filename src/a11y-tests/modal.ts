@@ -1,8 +1,9 @@
 import { expect, userEvent } from '@storybook/test';
 import { findByShadowRole } from 'shadow-dom-testing-library';
 
-import { Step } from './types';
 import { pause } from '../utils';
+
+import { Step } from './types';
 
 // https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
 export const a11yModal = async ({
@@ -43,8 +44,8 @@ export const a11yModal = async ({
   await step('The dialog has an accessible label', async () => {
     const ariaLabel = dialog.getAttribute('aria-label');
     const ariaLabelledBy = dialog.getAttribute('aria-labelledby');
-    const labelElement =
-      (ariaLabelledBy && document.getElementById(ariaLabelledBy)) as HTMLElement;
+    const labelElement = (ariaLabelledBy &&
+      document.getElementById(ariaLabelledBy)) as HTMLElement;
 
     await expect(Boolean(ariaLabel || labelElement?.textContent)).toBe(true);
   });

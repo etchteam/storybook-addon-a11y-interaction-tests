@@ -1,17 +1,18 @@
 import { expect, userEvent } from '@storybook/test';
 import {
-  findByShadowRole,
   findAllByShadowRole,
+  findByShadowRole,
   deepQuerySelector,
 } from 'shadow-dom-testing-library';
 
-import { Step } from './types';
 import {
   getActiveElement,
-  userEventTab,
-  focusable,
   querySelectorAll,
+  focusable,
+  userEventTab,
 } from '../utils';
+
+import { Step } from './types';
 
 // https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
 export const a11yTabs = async ({
@@ -117,7 +118,10 @@ export const a11yTabs = async ({
       const previousSibling =
         tablistElement.previousElementSibling as HTMLElement;
 
-      const focusableElements = querySelectorAll(focusable, previousSibling) as HTMLElement[];
+      const focusableElements = querySelectorAll(
+        focusable,
+        previousSibling,
+      ) as HTMLElement[];
 
       const focusableBeforeTablist =
         focusableElements.length > 0
@@ -156,7 +160,8 @@ export const a11yTabs = async ({
 
       const activeTabPanel = tabPanelElements.find(
         (tabPanel) =>
-          tabPanel.getAttribute('aria-labelledby') === (getActiveElement() as HTMLElement).id,
+          tabPanel.getAttribute('aria-labelledby') ===
+          (getActiveElement() as HTMLElement).id,
       );
 
       // Tab again and check that the focus is not in the tablist

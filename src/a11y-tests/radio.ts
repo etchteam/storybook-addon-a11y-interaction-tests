@@ -1,7 +1,7 @@
 import { expect, userEvent } from '@storybook/test';
 import {
-  queryByShadowRole,
   findAllByShadowRole,
+  queryByShadowRole,
 } from 'shadow-dom-testing-library';
 
 import { Step } from './types';
@@ -83,7 +83,9 @@ export const a11yRadio = async ({
         const hasLabel =
           radioGroup.getAttribute('aria-label') ||
           (radioGroup.getAttribute('aria-labelledby') &&
-            document.getElementById(radioGroup.getAttribute('aria-labelledby') || '')?.textContent);
+            document.getElementById(
+              radioGroup.getAttribute('aria-labelledby') || '',
+            )?.textContent);
 
         await expect(hasLabel).toBeTruthy();
       } else {
@@ -169,7 +171,7 @@ export const a11yRadio = async ({
       // Hey Developer!
       // There's a bug in @testing-library/user-event that makes the keypresses on
       // radio buttons backwards. This should be fixed in 14.6.1, but 14.5.2 is bundled
-      // with @storybook/test in index.mjs at the time I'm writing this so I can't fix it.
+      // with ../utils/test-utils in index.mjs at the time I'm writing this so I can't fix it.
       // If your tests just fell over they probably fixed it and these arrows need flipping.
       // https://github.com/testing-library/user-event/pull/1049
       keys = ['{arrowleft}', '{arrowdown}'];

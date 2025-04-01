@@ -6,7 +6,7 @@ import {
 
 import { Step } from './types';
 
-// https://www.w3.org/WAI/ARIA/apg/patterns/button/
+// https://www.w3.org/WAI/ARIA/apG/patterns/button/
 export const a11yButton = async ({
   step,
   canvasElement,

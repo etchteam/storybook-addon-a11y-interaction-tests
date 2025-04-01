@@ -1,11 +1,13 @@
+// Import directly from our main a11y-tests index
 import { expect, userEvent } from '@storybook/test';
 import {
   findByShadowRole,
   queryAllByShadowRole,
 } from 'shadow-dom-testing-library';
 
-import { Step } from './types';
 import { focusable, pause, querySelectorAll, userEventTab } from '../utils';
+
+import { Step } from './types';
 
 async function resetCombobox(combobox: HTMLElement) {
   // Clear the input

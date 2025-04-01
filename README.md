@@ -18,7 +18,7 @@ This addon provides a set of reusable accessibility interaction tests that you c
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react';
-import { expect, userEvent } from '@storybook/test';
+import { expect, userEvent } from '../utils/test-utils';
 import { a11yButton } from '@etchteam/storybook-addon-a11y-interaction-tests';
 
 import { Button } from './Button';
