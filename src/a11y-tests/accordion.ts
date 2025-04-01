@@ -1,14 +1,15 @@
 import { expect, userEvent } from '@storybook/test';
 import { findAllByShadowRole } from 'shadow-dom-testing-library';
 
-import { a11yDisclosure } from './disclosure';
-import { Step } from './types';
 import {
   getActiveElement,
   userEventTab,
   userEventShiftTab,
   pause,
 } from '../utils';
+
+import { a11yDisclosure } from './disclosure';
+import { Step } from './types';
 
 const testAccordionKeyboardInteractions = async ({
   key,
@@ -34,7 +35,9 @@ const testAccordionKeyboardInteractions = async ({
 
     if (isExclusive && otherAccordions.length > 0) {
       const otherAccordion = otherAccordions[0];
-      await userEvent.click(otherAccordion.querySelector('summary') as HTMLElement);
+      await userEvent.click(
+        otherAccordion.querySelector('summary') as HTMLElement,
+      );
       await pause();
 
       await userEvent.type(summary, key);
@@ -127,8 +130,9 @@ export const a11yAccordion = async ({
       'Shift + Tab: Moves focus to the previous focusable element; all focusable elements in the accordion are included in the page Tab sequence.',
       async () => {
         // Focus last accordion
-        const lastSummary =
-          accordions[accordions.length - 1].querySelector('summary') as HTMLElement;
+        const lastSummary = accordions[accordions.length - 1].querySelector(
+          'summary',
+        ) as HTMLElement;
         lastSummary.focus();
 
         for (const accordion of [...accordions].reverse()) {

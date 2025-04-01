@@ -1,6 +1,6 @@
 {
   "name": "@etchteam/storybook-addon-a11y-interaction-tests",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Storybook addon for accessibility interaction tests",
   "keywords": [
     "storybook-addons",
@@ -28,7 +28,8 @@
     "build": "npm run clean && tsc",
     "build:watch": "npm run clean && tsc -w",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "storybook": {
     "displayName": "A11y Interaction Tests",
@@ -48,12 +49,17 @@
     "shadow-dom-testing-library": "^1.0.0"
   },
   "devDependencies": {
+    "@etchteam/eslint-config": "2.2.39",
     "@storybook/addon-interactions": "^7.0.0",
     "@storybook/addons": "^7.0.0",
     "@storybook/api": "^7.0.0",
     "@storybook/channels": "^7.0.0",
     "@storybook/client-api": "^7.0.0",
     "@types/node": "^18.0.0",
+    "eslint": "8.57.1",
+    "husky": "9.1.7",
+    "lint-staged": "15.5.0",
+    "prettier": "3.5.3",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.0"
   },
