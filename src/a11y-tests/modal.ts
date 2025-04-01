@@ -2,7 +2,7 @@ import { expect, userEvent } from '@storybook/test';
 import { findByShadowRole } from 'shadow-dom-testing-library';
 
 import { Step } from './types';
-import { pause } from './utils';
+import { pause } from '../utils';
 
 // https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
 export const a11yModal = async ({

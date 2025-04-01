@@ -11,7 +11,7 @@ import {
   userEventTab,
   focusable,
   querySelectorAll,
-} from './utils';
+} from '../utils';
 
 // https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
 export const a11yTabs = async ({

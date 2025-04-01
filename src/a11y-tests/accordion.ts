@@ -8,7 +8,7 @@ import {
   userEventTab,
   userEventShiftTab,
   pause,
-} from './utils';
+} from '../utils';
 
 const testAccordionKeyboardInteractions = async ({
   key,

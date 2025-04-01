@@ -5,7 +5,7 @@ import {
 } from 'shadow-dom-testing-library';
 
 import { Step } from './types';
-import { focusable, pause, querySelectorAll, userEventTab } from './utils';
+import { focusable, pause, querySelectorAll, userEventTab } from '../utils';
 
 async function resetCombobox(combobox: HTMLElement) {
   // Clear the input
