@@ -1,4 +1,4 @@
-import { a11yButton } from '../../../src/a11y-tests';
+import { a11yButton } from '@etchteam/storybook-addon-a11y-interaction-tests';
 
 import { Button } from './Button';
 
@@ -11,5 +11,7 @@ export default {
 };
 
 export const Default = {
-  play: a11yButton,
+  play: async ({ canvasElement, step }) => {
+    await a11yButton({ canvasElement, step });
+  },
 };

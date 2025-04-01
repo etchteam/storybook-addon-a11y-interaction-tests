@@ -1,6 +1,6 @@
 {
   "name": "@etchteam/storybook-addon-a11y-interaction-tests",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Storybook addon for accessibility interaction tests",
   "keywords": [
     "storybook-addons",
