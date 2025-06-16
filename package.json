@@ -1,6 +1,6 @@
 {
   "name": "@etchteam/storybook-addon-a11y-interaction-tests",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Storybook addon for accessibility interaction tests",
   "keywords": [
     "storybook-addons",
@@ -41,7 +41,6 @@
     ]
   },
   "dependencies": {
-    "@storybook/test": "^8.6.0",
     "focusable-selectors": "0.8.4",
     "postcss-selector-parser": "7.1.0",
     "shadow-dom-testing-library": "^1.0.0"

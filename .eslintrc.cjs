@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@etchteam'],
+  extends: ['@etchteam', 'plugin:storybook/recommended'],
   settings: {
     'import/resolver': {
       node: {

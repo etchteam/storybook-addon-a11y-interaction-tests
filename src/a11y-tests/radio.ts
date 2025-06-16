@@ -1,8 +1,8 @@
-import { expect, userEvent } from '@storybook/test';
 import {
   findAllByShadowRole,
   queryByShadowRole,
 } from 'shadow-dom-testing-library';
+import { expect, userEvent } from 'storybook';
 
 import { Step } from './types';
 

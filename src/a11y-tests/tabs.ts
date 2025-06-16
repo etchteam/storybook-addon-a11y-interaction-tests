@@ -1,9 +1,9 @@
-import { expect, userEvent } from '@storybook/test';
 import {
   findAllByShadowRole,
   findByShadowRole,
   deepQuerySelector,
 } from 'shadow-dom-testing-library';
+import { expect, userEvent } from 'storybook';
 
 import {
   getActiveElement,

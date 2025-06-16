@@ -1,9 +1,9 @@
-import { expect } from '@storybook/test';
 import {
   findByShadowRole,
   findAllByShadowRole,
   deepQuerySelector,
 } from 'shadow-dom-testing-library';
+import { expect } from 'storybook';
 
 import { Step } from './types';
 
