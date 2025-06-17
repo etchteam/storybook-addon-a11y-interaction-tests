@@ -1,5 +1,5 @@
 import { findByShadowRole } from 'shadow-dom-testing-library';
-import { expect, userEvent } from 'storybook';
+import { expect, userEvent } from 'storybook/test';
 
 import { Step } from './types';
 

@@ -1,5 +1,5 @@
 import { findAllByShadowRole } from 'shadow-dom-testing-library';
-import { expect, userEvent } from 'storybook';
+import { expect, userEvent } from 'storybook/test';
 
 import {
   getActiveElement,

@@ -2,7 +2,7 @@ import {
   findAllByShadowRole,
   deepQuerySelector,
 } from 'shadow-dom-testing-library';
-import { expect } from 'storybook';
+import { expect } from 'storybook/test';
 
 import { a11yTabs } from './tabs';
 import { Step } from './types';
