@@ -3,7 +3,7 @@ import {
   findAllByShadowRole,
   deepQuerySelector,
 } from 'shadow-dom-testing-library';
-import { expect } from 'storybook';
+import { expect } from 'storybook/test';
 
 import { Step } from './types';
 
