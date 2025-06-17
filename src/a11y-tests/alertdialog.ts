@@ -1,5 +1,5 @@
-import { expect } from '@storybook/test';
 import { findByShadowRole } from 'shadow-dom-testing-library';
+import { expect } from 'storybook';
 
 import { Step } from './types';
 

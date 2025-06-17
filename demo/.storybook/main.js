@@ -1,17 +1,14 @@
 const config = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-interactions',
-  ],
+  addons: [],
+
   framework: {
     name: '@storybook/react-vite',
     options: {}
   },
+
   features: {
     interactionsDebugger: true,
-  },
-  docs: {
-    autodocs: 'tag'
   }
 };
 
