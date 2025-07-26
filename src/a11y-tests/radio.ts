@@ -167,14 +167,7 @@ export const a11yRadio = async ({
       // Right Arrow and Down Arrow: move focus to the next radio button in the group,
       // uncheck the previously focused button, and check the newly focused button.
       // If focus is on the last button, focus moves to the first button.
-
-      // Hey Developer!
-      // There's a bug in @testing-library/user-event that makes the keypresses on
-      // radio buttons backwards. This should be fixed in 14.6.1, but 14.5.2 is bundled
-      // with ../utils/test-utils in index.mjs at the time I'm writing this so I can't fix it.
-      // If your tests just fell over they probably fixed it and these arrows need flipping.
-      // https://github.com/testing-library/user-event/pull/1049
-      keys = ['{arrowleft}', '{arrowdown}'];
+      keys = ['{arrowright}', '{arrowdown}'];
       for (const arrow of keys) {
         await userEvent.click(firstRadio);
         await userEvent.keyboard(arrow);
@@ -190,7 +183,7 @@ export const a11yRadio = async ({
       // Left Arrow and Up Arrow: move focus to the previous radio button in the group,
       // uncheck the previously focused button, and check the newly focused button.
       // If focus is on the first button, focus moves to the last button.
-      keys = ['{arrowright}', '{arrowup}'];
+      keys = ['{arrowleft}', '{arrowup}'];
       for (const arrow of keys) {
         await userEvent.click(firstRadio);
         await userEvent.keyboard(arrow);
