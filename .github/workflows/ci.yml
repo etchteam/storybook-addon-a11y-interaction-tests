@@ -1,0 +1,60 @@
+---
+name: 👮 CI
+on: [pull_request]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+env:
+  HUSKY: 0
+jobs:
+  build-and-test:
+    name: 👷 Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: 📦 Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: 🔧 Install dependencies
+        run: npm ci
+      - name: 👷‍♂️ Build plugin
+        run: npm run build
+      - name: 🔧 Install dependencies
+        run: npm ci
+        working-directory: ./demo
+      - name: 👷‍♂️ Build Storybook
+        run: npm run build-storybook
+        working-directory: ./demo
+        env:
+          # Animations break the a11y tests, so we disable them
+          STORYBOOK_DISABLE_ANIMATIONS: true
+          STORYBOOK_DISABLE_TELEMETRY: 1
+      - name: 🧪 Unit tests
+        run: npm run test
+  lint:
+    name: 🧹 Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: 📦 Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: 🔧 Install dependencies
+        run: npm ci
+      - name: 🧹 Lint
+        uses: oxsecurity/megalinter/flavors/javascript@e08c2b05e3dbc40af4c23f41172ef1e068a7d651
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

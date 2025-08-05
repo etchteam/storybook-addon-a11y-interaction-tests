@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB,lorem",
+  "words": [],
+  "maxNumberOfProblems": 1000,
+  "ignorePaths": [
+    ".cspell.json",
+    ".vscode/**",
+    "CHANGELOG.md",
+    "dist.*/**",
+    "dist/**",
+    "node_modules",
+    "package-lock.json",
+    "package.json"
+  ],
+  "noConfigSearch": true,
+  "ignoreWords": [
+    "etchteam"
+  ]
+}
