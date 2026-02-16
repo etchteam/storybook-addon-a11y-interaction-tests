@@ -4,12 +4,8 @@ const config = {
 
   framework: {
     name: '@storybook/react-vite',
-    options: {}
+    options: {},
   },
-
-  features: {
-    interactionsDebugger: true,
-  }
 };
 
 export default config;
