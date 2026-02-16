@@ -30,7 +30,8 @@
     "clean": "rimraf ./dist",
     "prepare": "node .husky/install.mjs",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "release": "semantic-release"
   },
   "storybook": {
     "displayName": "A11y Interaction Tests",
@@ -53,9 +54,9 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.3",
-    "@semantic-release/npm": "^12.0.2",
-    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/npm": "^13.1.4",
+    "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/node": "^22.0.0",
     "eslint": "^9.32.0",
     "eslint-plugin-storybook": "10.2.8",
@@ -63,7 +64,7 @@
     "lint-staged": "^16.1.4",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
-    "semantic-release": "^24.2.7",
+    "semantic-release": "^25.0.3",
     "storybook": "^10.0.0",
     "typescript": "^5.0.0"
   }
