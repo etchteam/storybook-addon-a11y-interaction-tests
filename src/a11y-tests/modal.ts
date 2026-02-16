@@ -72,13 +72,20 @@ export const a11yModal = async ({
     // Shift+Tab: Moves focus to previous tabbable element inside dialog
     // Focus returns to the triggering element when dialog closes
 
-    await step('Escape: Closes the dialog', async () => {
-      await userEvent.keyboard('{Escape}');
+    // Native <dialog> elements use the Close Watcher API which only responds
+    // to trusted keyboard events. Synthetic events from userEvent.keyboard
+    // cannot close them, so we skip this test for native dialogs.
+    const isNativeDialog = dialog.tagName === 'DIALOG';
 
-      await pause(500);
+    if (!isNativeDialog) {
+      await step('Escape: Closes the dialog', async () => {
+        await userEvent.keyboard('{Escape}');
 
-      // Check if dialog is hidden or removed
-      await expect(dialog).not.toBeVisible();
-    });
+        await pause(500);
+
+        // Check if dialog is hidden or removed
+        await expect(dialog).not.toBeVisible();
+      });
+    }
   });
 };
