@@ -1,3 +1,10 @@
+## <small>2.0.1 (2026-02-16)</small>
+
+* fix: semantic release ([2e66b74](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/commit/2e66b74))
+* fix: trigger release ([376a579](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/commit/376a579))
+* chore(release): 1.0.0 [skip ci] ([ae4f078](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/commit/ae4f078))
+* Merge pull request #23 from etchteam/fix/semantic-release ([cd1c359](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/commit/cd1c359)), closes [#23](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/issues/23)
+
 ## 1.0.0 (2026-02-16)
 
 * feat!: storybook 9 compatibility ([0cfe078](https://github.com/etchteam/storybook-addon-a11y-interaction-tests/commit/0cfe078))
