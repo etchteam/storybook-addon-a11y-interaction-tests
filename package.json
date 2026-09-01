@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "focusable-selectors": "0.8.4",
-    "postcss-selector-parser": "7.1.0",
+    "postcss-selector-parser": "7.1.5",
     "shadow-dom-testing-library": "^1.0.0"
   },
   "devDependencies": {
